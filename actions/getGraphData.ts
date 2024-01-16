@@ -50,7 +50,10 @@ export default async function getGraphData() {
             moment(a.date).diff(moment(b.date))
         )
 
-        return formattedData
+        return new Promise((resolve) =>
+        setTimeout(() => {
+            resolve(formattedData)
+        }, 1000))
     } catch (error: any) {
         throw new Error(error)
     }

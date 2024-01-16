@@ -1,5 +1,3 @@
-export const revelidate = 0 // return force dynamic
-
 import Container from "@/app/components/container"
 import HomeBanner from "@/app/components/HomeBanner/HomeBanner";
 import { products } from "@/utils/products";

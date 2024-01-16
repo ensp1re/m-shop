@@ -55,7 +55,10 @@ export default async function getProducts(params: IProductParams) {
             }
         }
         )
-        return products
+        return new Promise((resolve) =>
+        setTimeout(() => {
+            resolve(products)
+        }, 1000))
 
     } catch (error: any) {
         throw new Error(error)
