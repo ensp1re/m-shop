@@ -12,10 +12,8 @@ export default async function getOrders() {
             }
         })
 
-        return new Promise((resolve) =>
-        setTimeout(() => {
-            resolve(orders)
-        }, 1000))    } catch (error: any) {
+        return orders
+    } catch (error: any) {
         throw new Error(error)
     }
 }

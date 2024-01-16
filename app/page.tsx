@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import Container from "@/app/components/container"
 import HomeBanner from "@/app/components/HomeBanner/HomeBanner";
 import { products } from "@/utils/products";
@@ -13,9 +15,6 @@ interface HomeProps {
 }
 
 export default async function Home({ searchParams } : HomeProps ) {
-
-    console.log("Params", searchParams)
-
 
     const productsFromDatabase = await getProducts(searchParams)
 

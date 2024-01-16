@@ -13,8 +13,6 @@ export default async function getProducts(params: IProductParams) {
 
         let searchString = searchTerm;
 
-        console.log("log", searchTerm)
-
         if (!searchTerm) {
             searchString = ''
         }
@@ -55,10 +53,7 @@ export default async function getProducts(params: IProductParams) {
             }
         }
         )
-        return new Promise((resolve) =>
-        setTimeout(() => {
-            resolve(products)
-        }, 1000))
+        return products
 
     } catch (error: any) {
         throw new Error(error)

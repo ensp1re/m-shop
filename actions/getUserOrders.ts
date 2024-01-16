@@ -24,10 +24,7 @@ export default async function getOrderById(userId: string) {
 
         if (!order) return null;
 
-        return new Promise((resolve) =>
-        setTimeout(() => {
-            resolve(order)
-        }, 1000));
+        return order;
     } catch (error:  any) {
         throw new Error(error);
     }

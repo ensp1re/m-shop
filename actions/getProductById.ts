@@ -31,10 +31,7 @@ export default async function getProductsById(params: IPrams) {
         if (!product) {
             return null
         }
-        return new Promise((resolve) =>
-        setTimeout(() => {
-            resolve(product)
-        }, 1000))
+        return product
 
     } catch (error: any) {
         throw new Error(error)

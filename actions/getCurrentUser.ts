@@ -7,7 +7,7 @@ export async function getSession() {
 }
 
 export async function getCurrentUser() {
-    try {
+    try{
         const session = await getSession()
 
         if (!session?.user?.email) {
@@ -20,7 +20,7 @@ export async function getCurrentUser() {
             where: {
                 email: session?.user?.email
             },
-            include: {
+            include : {
                 orders: true
             }
         });
@@ -30,15 +30,13 @@ export async function getCurrentUser() {
             return null
         }
 
-        return new Promise((resolve) =>
-            setTimeout(() => {
-                resolve({
-                    ...currentUser,
-                    createdAt: currentUser.createdAt.toISOString(),
-                    updatedAt: currentUser.updatedAt.toISOString(),
-                    emailVerified: currentUser.emailVerified?.toISOString() || null,
-                })
-            }, 1000))
+        return  {
+            ...currentUser,
+            createdAt: currentUser.createdAt.toISOString(),
+            updatedAt: currentUser.updatedAt.toISOString(),
+            emailVerified: currentUser.emailVerified?.toISOString() || null,
+        }
+
 
 
     } catch (error: any) {
