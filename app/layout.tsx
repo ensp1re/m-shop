@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'; // solution that helped to deploy on Vercel
+
 import type {Metadata} from 'next'
 import {Poppins} from 'next/font/google'
 import './globals.css'
