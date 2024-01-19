@@ -1,5 +1,7 @@
 import React from "react";
 import AdminNav from "../components/admin/AdminNav";
+import { getCurrentUser } from "@/actions/getCurrentUser";
+import NullData from "../components/NullData";
 
 
 
@@ -9,7 +11,15 @@ export const metadata = {
 }
 
 
-const AdminLayout = ({children}: {children : React.ReactNode}) => {
+const AdminLayout = async ({children}: {children : React.ReactNode}) => {
+
+
+    const currentUser = await getCurrentUser()
+
+    if (currentUser?.role !== "ADMIN") {
+        return <NullData title="Access Denied"/>
+    }
+
     return (
         <div className="">
             <AdminNav/>
